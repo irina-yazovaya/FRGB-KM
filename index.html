@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FIREFORT · Дашборд — 3 слайда</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 2 L58 12 L58 32 C58 46 46 56 32 62 C18 56 6 46 6 32 L6 12 Z' fill='%23E53935'/><path d='M32 18 C32 18 24 28 24 36 C24 41 27.5 45 32 45 C36.5 45 40 41 40 36 C40 32 38 29 36 26 C36 30 34 32 32 32 C32 32 34 26 32 18 Z' fill='%23FFA726'/></svg>">
 <style>
   :root {
     --red: #E53935;
@@ -37,7 +38,7 @@
   .slide { flex: 0 0 100%; height: 100%; overflow-y: auto; padding: 24px; }
   .slide-inner { max-width: 1200px; margin: 0 auto; padding-bottom: 110px; }
 
-  /* ==== НАВИГАЦИЯ (поверх всего) ==== */
+  /* ==== НАВИГАЦИЯ ==== */
   .nav {
     position: fixed; bottom: 20px; left: 50%;
     transform: translateX(-50%);
@@ -332,60 +333,20 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .comp-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-  .comp-card::after {
-    content: ""; position: absolute;
-    bottom: -30px; right: -30px;
-    width: 100px; height: 100px;
-    background: radial-gradient(circle, rgba(255,111,0,0.10) 0%, transparent 70%);
-    border-radius: 50%; pointer-events: none;
   }
   .comp-card:nth-child(1) { border-left-color: var(--orange); background: linear-gradient(135deg, #fff 55%, var(--orange-soft) 100%); }
   .comp-card:nth-child(2) { border-left-color: var(--red); background: linear-gradient(135deg, #fff 55%, #FFEBEE 100%); }
   .comp-card:nth-child(3) { border-left-color: var(--blue); background: linear-gradient(135deg, #fff 55%, #E3F2FD 100%); }
   .comp-card:nth-child(4) { border-left-color: var(--green); background: linear-gradient(135deg, #fff 55%, #E8F5E9 100%); }
-
-  .comp-icon { font-size: 24px; line-height: 1; margin-bottom: 10px; position: relative; z-index: 1; }
-  .comp-name {
-    font-size: 13px; font-weight: 800;
-    color: var(--gray-text);
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    margin-bottom: 4px;
-    position: relative; z-index: 1;
-  }
-  .comp-supplier {
-    font-size: 11.5px;
-    color: var(--gray-light);
-    margin-bottom: 12px;
-    position: relative; z-index: 1;
-  }
-  .comp-price {
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 1;
-    color: var(--orange);
-    letter-spacing: -0.5px;
-    position: relative; z-index: 1;
-  }
+  .comp-icon { font-size: 24px; line-height: 1; margin-bottom: 10px; }
+  .comp-name { font-size: 13px; font-weight: 800; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .comp-supplier { font-size: 11.5px; color: var(--gray-light); margin-bottom: 12px; }
+  .comp-price { font-size: 28px; font-weight: 900; line-height: 1; color: var(--orange); letter-spacing: -0.5px; }
   .comp-card:nth-child(2) .comp-price { color: var(--red); }
   .comp-card:nth-child(3) .comp-price { color: var(--blue); }
   .comp-card:nth-child(4) .comp-price { color: var(--green); }
-  .comp-price .unit {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--gray-light);
-    margin-left: 4px;
-  }
-  .comp-share {
-    margin-top: 10px;
-    font-size: 11.5px;
-    font-weight: 700;
-    color: var(--gray-light);
-    position: relative; z-index: 1;
-  }
+  .comp-price .unit { font-size: 14px; font-weight: 700; color: var(--gray-light); margin-left: 4px; }
+  .comp-share { margin-top: 10px; font-size: 11.5px; font-weight: 700; color: var(--gray-light); }
   .comp-share b { color: var(--gray-text); }
 
   .comp-total {
@@ -429,30 +390,17 @@
     background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
     border-left: 5px solid var(--blue);
     display: flex; flex-direction: column; gap: 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
     position: relative; overflow: hidden;
   }
-  .arg::after {
-    content: ""; position: absolute;
-    bottom: -30px; right: -30px;
-    width: 100px; height: 100px;
-    background: radial-gradient(circle, rgba(255,111,0,0.08) 0%, transparent 70%);
-    border-radius: 50%; pointer-events: none;
-  }
-  .arg:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
   .arg:nth-child(3n+1) { border-left-color: var(--red); background: linear-gradient(135deg, #fff 55%, #FFEBEE 100%); }
   .arg:nth-child(3n+2) { border-left-color: var(--green); background: linear-gradient(135deg, #fff 55%, #E8F5E9 100%); }
   .arg:nth-child(3n+3) { border-left-color: var(--orange); background: linear-gradient(135deg, #fff 55%, var(--orange-soft) 100%); }
-  .arg .arg-icon { font-size: 22px; line-height: 1; position: relative; z-index: 1; }
-  .arg .arg-number {
-    font-size: 34px; font-weight: 900;
-    line-height: 1; color: var(--red);
-    letter-spacing: -0.5px; position: relative; z-index: 1;
-  }
+  .arg .arg-icon { font-size: 22px; line-height: 1; }
+  .arg .arg-number { font-size: 34px; font-weight: 900; line-height: 1; color: var(--red); letter-spacing: -0.5px; }
   .arg:nth-child(3n+2) .arg-number { color: var(--green); }
   .arg:nth-child(3n+3) .arg-number { color: var(--orange); }
-  .arg .arg-title { font-size: 14px; font-weight: 700; color: var(--gray-text); margin-top: 4px; position: relative; z-index: 1; }
-  .arg .arg-desc { font-size: 12.5px; color: var(--gray-text); line-height: 1.5; position: relative; z-index: 1; }
+  .arg .arg-title { font-size: 14px; font-weight: 700; color: var(--gray-text); margin-top: 4px; }
+  .arg .arg-desc { font-size: 12.5px; color: var(--gray-text); line-height: 1.5; }
   .arg .arg-desc b { color: var(--gray-text); font-weight: 800; }
 
   /* ==== ЗАГОЛОВОК СЛАЙДА ==== */
@@ -471,14 +419,8 @@
     color: #fff; font-weight: 900; font-size: 17px;
     box-shadow: 0 3px 10px rgba(229,57,53,0.3);
   }
-  .slide-title .text {
-    font-size: 20px; font-weight: 900;
-    color: var(--red-dark); letter-spacing: -0.3px;
-  }
-  .slide-title .sub-text {
-    font-size: 13px; color: var(--gray-light);
-    margin-left: auto; font-weight: 600;
-  }
+  .slide-title .text { font-size: 20px; font-weight: 900; color: var(--red-dark); letter-spacing: -0.3px; }
+  .slide-title .sub-text { font-size: 13px; color: var(--gray-light); margin-left: auto; font-weight: 600; }
 
   footer {
     text-align: center; font-size: 12px; color: var(--gray-light);
@@ -486,7 +428,6 @@
     display: flex; align-items: center; justify-content: center; gap: 12px;
     flex-wrap: wrap;
   }
-  footer svg { display: block; opacity: 0.7; }
 
   /* ==== АДАПТИВ ==== */
   @media (max-width: 1000px) {
@@ -666,7 +607,7 @@
       </div>
     </div>
 
-    <!-- ================= СЛАЙД 2: ЦИФРЫ ================= -->
+    <!-- ================= СЛАЙД 2: ЦИФРЫ И ЦЕНООБРАЗОВАНИЕ ================= -->
     <div class="slide">
       <div class="slide-inner">
 
@@ -676,6 +617,7 @@
           <div class="sub-text">Слайд 2 из 3</div>
         </div>
 
+        <!-- Стоимость компонентов -->
         <div class="section">
           <h2><span class="dot"></span>Стоимость компонентов ОРК</h2>
 
@@ -725,6 +667,7 @@
           </p>
         </div>
 
+        <!-- Ценовая политика -->
         <div class="section">
           <h2><span class="dot"></span>Ценовая политика: FRJB-KM-P1-2.5-02-FF-IP54</h2>
 
@@ -786,6 +729,7 @@
           </p>
         </div>
 
+        <!-- Цель 2027 -->
         <div class="section">
           <h2><span class="dot"></span>Целевые показатели 2027</h2>
           <div class="kpi-grid" style="margin-bottom:0;">
@@ -815,7 +759,7 @@
       </div>
     </div>
 
-    <!-- ================= СЛАЙД 3: РЕСУРСЫ ================= -->
+    <!-- ================= СЛАЙД 3: СТАРТ И РЕСУРСЫ ================= -->
     <div class="slide">
       <div class="slide-inner">
 
